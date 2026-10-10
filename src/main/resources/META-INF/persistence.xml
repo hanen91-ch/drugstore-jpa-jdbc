@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+             https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+             version="3.1">
+
+    <persistence-unit name="Projet_Session_PU" transaction-type="RESOURCE_LOCAL">
+        <class>model.User</class>
+        <class>model.Doctor</class>
+        <class>model.Patient</class>
+        <class>model.Drug</class>
+        <class>model.Prescription</class>
+        <class>model.DrugInteraction</class>
+        <class>model.AdverseDrugReaction</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver"   value="org.mariadb.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"      value="jdbc:mariadb://mysql-userdb.alwaysdata.net:3306/userdb_drugstore"/>
+            <property name="jakarta.persistence.jdbc.user"     value="userdb"/>
+            <property name="jakarta.persistence.jdbc.password" value="VOTRE_MOT_DE_PASSE"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
